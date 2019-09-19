@@ -15,7 +15,7 @@ As of now install no updates from getting started ui without risking not beeing 
 download https://github.com/ChristopherHX/mcpelauncher-manifest/releases/download/1.12.x.0/mcpelauncher-client-46b9621-Linux.deb
 dpkg -i mcpelauncher-client-46b9621-Linux.deb
 
-#### CLient
+#### Client
 
 `sudo raspi-config`
 enable opengl desktop kernel mode in misc (you may also to adjust gpu mem to 128 reduce some ui glitchs) and restart
