@@ -1,11 +1,11 @@
 # mcpelauncher-manifest
-The main repository for the Linux and Mac OS Bedrock edition Minecraft launcher.
+The main repository for the Linux and Mac OS Bedrock edition Minecraft launcher with fixed armhf code and 1.12 dedicated server
 
 # Getting started with Raspberry Pi2
 The latest Raspbian buster won't launch minecraft 1.12.1.1 UI cropped / pure glitch
 Raspbian stretch works without sound / unknown if there is a workaround
 
-## This raspbian Release without updates is known to run it without to many glitches or light issues
+## This raspbian stretch Release (without updates) is known to run it without many glitches or light issues (no sound)
 http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-06-29/2018-06-27-raspbian-stretch.zip
 As of now install no updates from getting started ui without risking not beeing able to run it fine
 
@@ -16,6 +16,9 @@ download https://github.com/ChristopherHX/mcpelauncher-manifest/releases/downloa
 dpkg -i mcpelauncher-client-46b9621-Linux.deb
 
 #### CLient
+
+`sudo raspi-config`
+enable opengl desktop kernel mode in misc (you may also to adjust gpu mem to 128 reduce some ui glitchs) and restart
 
 `export OPENSSL_armcap=0` (Pi2)
 start `mcpelauncher-client` form every where
