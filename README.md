@@ -10,7 +10,7 @@ http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-06-29/2018-06-27-
 As of now install no updates from getting started ui without risking not beeing able to run it fine
 
 ### Download Prebuild Raspbian stretch 2018-06-29+
-`sudo apt-get install libpng libx11 libxi libcurl4-openssl libudev libevdev libegl1 libasound2`
+`sudo apt-get install libpng16-16 libx11-6 libxi6 libcurl3 libudev1 libevdev2 libegl1-mesa libasound2`
 
 download https://github.com/ChristopherHX/mcpelauncher-manifest/releases/download/1.12.x.0/mcpelauncher-client-46b9621-Linux.deb
 dpkg -i mcpelauncher-client-46b9621-Linux.deb
