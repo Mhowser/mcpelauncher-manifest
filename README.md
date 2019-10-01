@@ -2,15 +2,17 @@
 The main repository for the Linux and Mac OS Bedrock edition Minecraft launcher with fixed armhf code and 1.12 dedicated server
 
 # Getting started with Raspberry Pi2
-- Problems with latest Raspbian buster / arch linux arm 2019 and other linux distros with mesa 1.19.*
-  - won't launch minecraft 1.12.1.1 UI cropped / pure glitch (when build with buster using mesa 1.19.*)
-  - starts with mesa 1.19.* but a lot of in game glitches and black area around the player (not really playable)
-  - working client launcher gui raspbian (with qt packages from debian buster)
-- Raspbian stretch works (mesa 1.13.x) without sound (unknown if there is a workaround)
+# Known issues
+- mesa 19.x is unusable for this launcher install mesa 13.0.6 from [source](https://mesa.freedesktop.org/archive/older-versions/13.x/13.0.6/mesa-13.0.6.tar.xz) [building instruction](https://github.com/anholt/mesa/wiki/Building-Mesa-for-VC4)
+prepend `LD_LIBRARY_PATH=$HOME/prefix/lib LIBGL_DRIVERS_PATH=$HOME/prefix/lib/dri GBM_DRIVERS_PATH=$HOME/prefix/lib `
+- no / bad quality analog audio (unknown hdmi audio quality)
+- Stretch qt5 is to old
+  - no gui launcher / downloader
+  - no Microsoft Account online play
 
-## This raspbian stretch Release (without updates) is known to run it without many glitches or light issues (no sound)
-http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-06-29/2018-06-27-raspbian-stretch.zip
-As of now install no updates from getting started ui without risking not beeing able to run it fine
+## This raspbian stretch is known to works out of box
+- mesa 13.0.6 preinstalled
+- download and flash http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-06-29/2018-06-27-raspbian-stretch.zip
 
 ### Download Prebuild for Raspbian stretch 2018-06-29+
 #### Client
@@ -34,7 +36,7 @@ As of now install no updates from getting started ui without risking not beeing 
 - start `mcpelauncher-server`
 
 
-### Building from source
+### Building from source 
 
 - `sudo apt-get install cmake libpng-dev libx11-dev libxi-dev libcurl4-openssl-dev libudev-dev libevdev-dev libegl1-mesa-dev libasound2`
 - `git clone --recursive https://github.com/ChristopherHX/mcpelauncher-manifest.git -b 1.12.x_armhf`
