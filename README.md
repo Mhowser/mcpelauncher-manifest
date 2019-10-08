@@ -6,16 +6,23 @@ The main repository for the Linux and Mac OS Bedrock edition Minecraft launcher 
 - mesa 19.x is unusable for this launcher install mesa 13.0.6 from [source](https://mesa.freedesktop.org/archive/older-versions/13.x/13.0.6/mesa-13.0.6.tar.xz) [building instruction](https://github.com/anholt/mesa/wiki/Building-Mesa-for-VC4)
 prepend `LD_LIBRARY_PATH=$HOME/prefix/lib LIBGL_DRIVERS_PATH=$HOME/prefix/lib/dri GBM_DRIVERS_PATH=$HOME/prefix/lib `
 - no / bad quality analog audio (unknown hdmi audio quality)
-- Stretch qt5 is to old
+
+## Raspbian 
+
+### buster
+- install mesa 13.0.6 is working, but not the distibution version (Raspberry Pi 2)
+- download https://github.com/ChristopherHX/mcpelauncher-manifest/releases/download
+- install via `sudo dpkg -i name.deb && sudo apt-get install -f`
+
+### stretch (only cli client + server)
+- Deprecated
+- qt is to old for the gui
   - no gui launcher / downloader
   - no Microsoft Account online play
-
-## This raspbian stretch is known to works out of box
 - mesa 13.0.6 preinstalled
-- download and flash http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-06-29/2018-06-27-raspbian-stretch.zip
 
-### Download Prebuild for Raspbian stretch 2018-06-29+
-#### Client
+#### Prebuild
+##### Client
 - `sudo apt-get install libpng16-16 libx11-6 libxi6 libcurl3 libudev1 libevdev2 libegl1-mesa libasound2`
 
 - download https://github.com/ChristopherHX/mcpelauncher-manifest/releases/download/1.12.x.0/mcpelauncher-client-46b9621-Linux.deb
@@ -27,14 +34,13 @@ prepend `LD_LIBRARY_PATH=$HOME/prefix/lib LIBGL_DRIVERS_PATH=$HOME/prefix/lib/dr
 - `export OPENSSL_armcap=0` (Pi2)
 - start `mcpelauncher-client` form every where
 
-#### Server
+##### Server
 - `sudo apt-get install libcurl3`
 
 - download https://github.com/ChristopherHX/mcpelauncher-manifest/releases/download/1.12.x.1/mcpelauncher-server
 
 - `export OPENSSL_armcap=0` (Pi2)
 - start `mcpelauncher-server`
-
 
 ### Building from source 
 
