@@ -11,7 +11,7 @@ prepend `LD_LIBRARY_PATH=$HOME/prefix/lib LIBGL_DRIVERS_PATH=$HOME/prefix/lib/dr
 
 ### buster
 - install mesa 13.0.6 is working, but not the distibution version (Raspberry Pi 2)
-- download https://github.com/ChristopherHX/mcpelauncher-manifest/releases/download
+- download https://github.com/ChristopherHX/mcpelauncher-manifest/releases/tag/1.12.x.2.armhf.raspbian.buster
 - install via `sudo dpkg -i name.deb && sudo apt-get install -f`
 
 ### stretch (only cli client + server)
