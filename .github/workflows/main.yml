@@ -5,41 +5,13 @@ on: [push]
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@master
       with:
-        repository: ChristopherHX/osx-packaging-scripts
-        ref: buildfork
-    - uses: actions/checkout@master
-      with:
-        repository: ChristopherHX/MacOSX10.13.sdk
-        ref: d4e62526638c82e8e62fef0de0ad767a1f798671
-        token: ${{ secrets.MacOSX1013sdk }}
-    - name: List files
-      working-directory: ${{ github.workspace }}
-      run: ls /Applications/Xcode*
-    - name: Update brew
-      run: brew update
-    - name: Install brew dependencies
-      run: brew install p7zip libzip libuv protobuf
-    - name: Install python dependencies
-      run: pip3 install jinja2 ds_store
-    - name: Download Qt
-      working-directory: ${{ github.workspace }}/../osx-packaging-scripts
-      run: ./download_qt.sh
-    - name: Build
-      working-directory: ${{ github.workspace }}/../osx-packaging-scripts
-      run: |
-        export MACOSX_DEPLOYMENT_TARGET=10.10
-        export SDKROOT=${{ github.workspace }}/../MacOSX10.13.sdk
-        python3 __main__.py --qt-path qt/*/*/
-        
-    - name: Build .dmg
-      working-directory: ${{ github.workspace }}/../osx-packaging-scripts
-      run: python3 build_dmg.py
+        submodules: true
     - uses: actions/upload-artifact@master
       with:
-        name: DMG Image
-        path: ${{ github.workspace }}/../osx-packaging-scripts/output/Minecraft Bedrock Launcher.dmg
+        name: Source
+        path: ${{ github.workspace }}
