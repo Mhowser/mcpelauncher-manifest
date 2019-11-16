@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@master
       with:
         repository: ChristopherHX/osx-packaging-scripts
-        ref: buildfork
+        ref: sizebug
     - uses: actions/checkout@master
       with:
         repository: ChristopherHX/MacOSX10.13.sdk
