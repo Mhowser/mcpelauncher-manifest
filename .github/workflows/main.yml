@@ -8,11 +8,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@50fbc622fc4ef5163becd7fab6573eac35f8462e
       with:
         repository: ChristopherHX/osx-packaging-scripts
         ref: sizebug
-    - uses: actions/checkout@master
+    - uses: actions/checkout@50fbc622fc4ef5163becd7fab6573eac35f8462e
       with:
         repository: ChristopherHX/MacOSX10.13.sdk
         ref: d4e62526638c82e8e62fef0de0ad767a1f798671
